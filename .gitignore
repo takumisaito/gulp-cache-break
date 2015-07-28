@@ -1,0 +1,30 @@
+#[ mac ]
+.DS_Store
+.Trashes
+
+#[ Windows ]
+Thumb.db
+ehthumbs.db
+Desktop.ini
+*.bak
+
+#[ Emacs ]
+*~
+
+#[ Vim ]
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+#[ node ]
+npm-debug.log
+node_modules/
+bower_components/
+
+#[ merge file ]
+*.orig
+
+#[ File to test ]
+__*__.*
+__*__/
