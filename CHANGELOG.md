@@ -1,3 +1,10 @@
+<a name="v0.1.2"></a>
+## v0.1.2 (2015-07-29)
+
+### :wrench: Update project
+
+- Added Test script
+
 <a name="v0.1.1"></a>
 ## v0.1.1 (2015-07-29)
 
