@@ -7,7 +7,7 @@
     "index.js"
   ],
   "scripts": {
-    "test": "mocha --reporter spec test/main.js"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "bust"
   ],
   "author": "Takumi Saito",
-  "license": "MIT",
+  "license": "",
   "bugs": {
     "url": "https://github.com/takumisaito/gulp-cache-break/issues"
   },
