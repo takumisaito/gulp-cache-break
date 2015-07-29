@@ -22,6 +22,7 @@
       , js_one_dist       : './test/tmp/js_one'
       , js_one_dist_file  : './test/tmp/js_one/js_a'
       , js_one_exp        : './test/expected/js_one/js_a'
+      
       , js_two            : [
                               './test/fixtures/js_a'
                             , './test/fixtures/js_b'
@@ -35,8 +36,25 @@
                               './test/expected/js_two/js_a'
                             , './test/expected/js_two/js_b'
                             ]
-      // , css_one     : './test/fixtures/css_a'
-      // , css_two     : ['./test/fixtures/css_a', './test/fixtures/css_b']
+                            
+      , css_one            : './test/fixtures/css_a'
+      , css_one_dist       : './test/tmp/css_one'
+      , css_one_dist_file  : './test/tmp/css_one/css_a'
+      , css_one_exp        : './test/expected/css_one/css_a'
+      
+      , css_two            : [
+                              './test/fixtures/css_a'
+                            , './test/fixtures/css_b'
+                            ]
+      , css_two_dist       : './test/tmp/css_two'
+      , css_two_dist_file  : [
+                              './test/tmp/css_two/css_a'
+                            , './test/tmp/css_two/css_b'
+                            ]
+      , css_two_exp        : [
+                              './test/expected/css_two/css_a'
+                            , './test/expected/css_two/css_b'
+                            ]
       }
     ;
     
@@ -46,7 +64,8 @@
     rimraf('./test/tmp', cb)
   });
   
-  // One file : js
+  // =============== JS ===============
+  // One file
   gulp.task('js-one', ['clean'], function(cb) {
     gulp.src(PATH.js_one)
       .pipe(cacheBreak({
@@ -57,7 +76,7 @@
       .on('end', cb);
   });
   
-  // Two file : js
+  // Two files
   gulp.task('js-two', ['js-one'], function(cb) {
     gulp.src(PATH.js_two)
       .pipe(cacheBreak({
@@ -68,8 +87,31 @@
       .on('end', cb);
   });
   
-  // run test script
-  gulp.task('mocha', ['js-two'], function (cb) {
+  // =============== CSS ===============
+  // One file
+  gulp.task('css-one', ['js-two'], function(cb) {
+    gulp.src(PATH.css_one)
+      .pipe(cacheBreak({
+        match: ['main_a.css', 'extra_a.css']
+      , replacement: '98765'
+      }))
+      .pipe(gulp.dest(PATH.css_one_dist))
+      .on('end', cb);
+  });
+  
+  // Two files
+  gulp.task('css-two', ['css-one'], function(cb) {
+    gulp.src(PATH.css_two)
+      .pipe(cacheBreak({
+        match: ['main_a.css', 'extra_b.css']
+      , replacement: '12345'
+      }))
+      .pipe(gulp.dest(PATH.css_two_dist))
+      .on('end', cb);
+  });
+  
+  // Run test script
+  gulp.task('mocha', ['css-two'], function (cb) {
     gulp.src(['test/*.js'], { read: false })
       .pipe(mocha({ reporter: 'spec'}))
       .on('error', util.log);

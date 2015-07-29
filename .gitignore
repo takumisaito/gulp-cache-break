@@ -22,11 +22,8 @@ npm-debug.log
 node_modules/
 bower_components/
 
+#[ tested file ]
 /**/tmp/
 
 #[ merge file ]
 *.orig
-
-#[ File to test ]
-__*__.*
-__*__/

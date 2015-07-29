@@ -1,7 +1,7 @@
 {
   "name": "gulp-cache-break",
-  "version": "0.1.0",
-  "description": "Simple cache-breaker, appends a timestamp or md5 hash to any urls for gulp",
+  "version": "0.1.1",
+  "description": "Simple cache-breaker for gulp, appends a timestamp or md5 hash to any urls",
   "main": "index.js",
   "files": [
     "index.js"
@@ -32,12 +32,9 @@
     "through2": "^2.0.0"
   },
   "devDependencies": {
-    "event-stream": "^3.3.1",
     "gulp": "^3.9.0",
     "gulp-mocha": "^2.1.3",
-    "mocha": "^2.2.5",
     "rimraf": "^2.4.2",
-    "should": "^7.0.2",
-    "vinyl": "^0.5.0"
+    "should": "^7.0.2"
   }
 }

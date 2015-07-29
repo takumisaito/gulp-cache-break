@@ -1,2 +1,2 @@
-<link rel="stylesheet" href="css/main_a.css">
+<link rel="stylesheet" href="css/main_a.css?rel=12345">
 <link rel="stylesheet" href="http://example.com/css/extra_a.css">
