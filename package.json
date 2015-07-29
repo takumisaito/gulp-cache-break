@@ -1,6 +1,6 @@
 {
   "name": "gulp-cache-break",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple cache-breaker for gulp, appends a timestamp or md5 hash to any urls",
   "main": "index.js",
   "files": [
