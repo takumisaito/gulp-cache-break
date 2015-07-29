@@ -1,3 +1,10 @@
+<a name="v0.1.1"></a>
+## v0.1.1 (2015-07-29)
+
+### Update Status
+
+- Removed license
+
 <a name="v0.1.0"></a>
 ## v0.1.0 (2015-07-27)
 
