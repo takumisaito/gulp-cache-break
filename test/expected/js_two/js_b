@@ -1,0 +1,2 @@
+<script src="js/libs_b.js"></script>
+<script defer src="http://example.com/js/main_b.js?rel=12345"></script>

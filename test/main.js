@@ -1,50 +1,56 @@
-(function () {
+(function (global) {
   /* global describe, it, beforeEach */
   'use strict';
   
-  var cacheBreakPlugin = require('../')
-    , File = require('vinyl')
-    , should = require('should')
+  var should = require('should')
     , fs = require('fs')
-    , es = require('event-stream')
+    , PATH = require('../gulpfile.js')
     ;
-  require('mocha');
   
   describe('gulp-cache-break', function () {
-    var dummyFile = {};
+    var output
+      , expected
+      ;
     
-    describe('cacheBreakPlugin()', function() {
-      it('should replace string on a stream', function(done) {
-        var dummyFile = new File({
-          path: 'fixtures/view.html',
-          cwd: './',
-          base: 'fixtures',
-          contents: fs.createReadStream(__dirname + '/fixtures/view.html')
-        })
-        
-        var stream = cacheBreakPlugin({
-              match: ['main.js', 'main.css']
-            , replacement: function (){
-                  return 'test_query_a'
-              }
-            })
-          ;
-          
-        stream.on('data', function (newFile) {
-          should.exist(newFile);
-          should.exist(newFile.contents);
-          
-          newFile.contents.pipe(es.wait(function (err, data) {
-            should.not.exist(err);
-            data.should.equal(fs.readFileSync('test/expected/view.html', 'utf8'));
-            done();
-          }));
-        });
-        
-        stream.write(dummyFile);
-        stream.end();
-      });
+    it('should replace js path : 1 file', function(done) {
+      output = fs.readFileSync(PATH.js_one_dist_file, 'utf-8');
+      expected = fs.readFileSync(PATH.js_one_exp, 'utf-8');
+      // 比較
+      should.equal(output, expected);
+      done();
+    });
+    
+    it('should replace js path : 2 files', function(done) {
+      var i = 0;
+      while (i < 2) {
+        output = fs.readFileSync(PATH.js_two_dist_file[i], 'utf-8');
+        expected = fs.readFileSync(PATH.js_two_exp[i], 'utf-8');
+        // 比較
+        should.equal(output, expected);
+        i = i + 1;
+      }
+      done();
+    });
+    
+    it('should replace css path : 1 file', function(done) {
+      output = fs.readFileSync(PATH.css_one_dist_file, 'utf-8');
+      expected = fs.readFileSync(PATH.css_one_exp, 'utf-8');
+      // 比較
+      should.equal(output, expected);
+      done();
+    });
+    
+    it('should replace css path : 2 files', function(done) {
+      var i = 0;
+      while (i < 2) {
+        output = fs.readFileSync(PATH.css_two_dist_file[i], 'utf-8');
+        expected = fs.readFileSync(PATH.css_two_exp[i], 'utf-8');
+        // 比較
+        should.equal(output, expected);
+        i = i + 1;
+      }
+      done();
     });
   });
   
-}());
+}(this));
