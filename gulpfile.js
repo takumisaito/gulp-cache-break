@@ -1,6 +1,6 @@
 /**
  * gulp-cache-break
- * https://github.com/takumisaito/gulp-cache-break
+ * https://github.com/umeruma/gulp-cache-break
  *
  * THIS GULP FILE FOR TEST.
  */
