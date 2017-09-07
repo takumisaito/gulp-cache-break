@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/takumisaito/gulp-cache-break.git"
+    "url": "https://github.com/umeruma/gulp-cache-break.git"
   },
   "keywords": [
     "gulpplugin",
@@ -20,12 +20,12 @@
     "break",
     "bust"
   ],
-  "author": "Takumi Saito",
+  "author": "umeruma",
   "license": "",
   "bugs": {
-    "url": "https://github.com/takumisaito/gulp-cache-break/issues"
+    "url": "https://github.com/umeruma/gulp-cache-break/issues"
   },
-  "homepage": "https://github.com/takumisaito/gulp-cache-break",
+  "homepage": "https://github.com/umeruma/gulp-cache-break",
   "dependencies": {
     "cache-breaker": "0.0.4",
     "gulp-util": "^3.0.6",

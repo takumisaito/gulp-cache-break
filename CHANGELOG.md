@@ -18,4 +18,4 @@
 ### :sparkles: New Feature
 
 - Added gulp-cache-break
-([05276528](https://github.com/takumisaito/gulp-cache-break/commit/05276528ae1fc290c5f3e597d63efbce89bb3557))
+([05276528](https://github.com/umeruma/gulp-cache-break/commit/05276528ae1fc290c5f3e597d63efbce89bb3557))
