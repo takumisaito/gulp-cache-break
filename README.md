@@ -6,7 +6,7 @@ This plugin based on [cache-breaker](https://github.com/shakyShane/cache-breaker
 
 You can customize output strings by changing option.
 
-Please refer to Please refer to [cache-breaker](https://github.com/shakyShane/cache-breaker), and [grunt-cache-breaker](https://github.com/shakyShane/grunt-cache-breaker).  
+Please refer to [cache-breaker](https://github.com/shakyShane/cache-breaker), and [grunt-cache-breaker](https://github.com/shakyShane/grunt-cache-breaker).  
 
 ## Usage
 
